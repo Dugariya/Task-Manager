@@ -6,9 +6,12 @@ import { ThemeProvider } from "@/lib/theme-provider";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 
+// Get the base URL from environment variable or default to '/'
+const base = import.meta.env.VITE_BASE_URL || '/';
+
 function Router() {
   return (
-    <Switch>
+    <Switch base={base}>
       <Route path="/" component={Home} />
       <Route component={NotFound} />
     </Switch>
